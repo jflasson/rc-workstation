@@ -1,7 +1,8 @@
 #!/bin/bash
 
-items="dev"
-#items="file dir/ dir/file dir/dir/file";
+# NOTE: directories HAVE to end with /
+items="dev/"
+#items="file dir/ dir/file dir/dir/ dir/dir/file";
 local_dir="$HOME"
 host="192.168.1.60"
 host_dir="$HOME/sync"
@@ -89,7 +90,7 @@ for d in $items; do
 			echo "Target does not exist." #>> $log_file
 			if [[ "$d" == */ ]]; then
 				echo "$host_path is a directory, creating target directory." #>> $log_file;
-				tmp=$local_path
+				tmp=$host_path
 			else
 				echo "$host_path is file, creating parent directory." #>> $log_file;
 				tmp=${host_path%\/*} #>> $log_file
