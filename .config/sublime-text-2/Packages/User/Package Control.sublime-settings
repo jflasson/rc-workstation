@@ -10,7 +10,7 @@
 	],
 	"installed_packages":
 	[
-		"Dust.js",
+		"DustBuster",
 		"Package Control",
 		"SCSS"
 	]
